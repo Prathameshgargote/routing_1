@@ -1,0 +1,17 @@
+<div class="col-md-12 text-right">
+    <button mat-raised-button color="primary" routerLink="add">
+        Add user
+    </button>
+</div>
+<div class="col-md-6 offset-3 mt-5">
+    <ng-container *ngIf="userArr.length>0 ;else nouser">
+        <ul class="list-group ">
+            <li class="list-group-item mb-2 bg-info" *ngFor="let user of userArr" [routerLink]="['/user',user.userId]">
+                {{user.userName}}
+            </li>
+        </ul>
+    </ng-container>
+    <ng-template #nouser>
+        <p class="alert alert-info"> User Not Available</p>
+    </ng-template>
+</div>

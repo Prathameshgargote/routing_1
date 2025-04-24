@@ -1,0 +1,17 @@
+<div class="col-md-12 text-right">
+    <button mat-raised-button color="primary" routerLink="add">
+        Add product
+    </button>
+</div>
+<div class="col-md-6 offset-3 mt-5">
+    <ng-container *ngIf="ProductArr.length>0 ;else nouser">
+        <ul class="list-group">
+            <li class="list-group-item mb-2 bg-info" *ngFor="let prod of ProductArr" [routerLink]="['/product',prod.pid]">
+                {{prod.pname}}
+            </li>
+        </ul>
+    </ng-container>
+    <ng-template #nouser>
+        <p class="alert alert-info"> Produdt Not Available</p>
+    </ng-template>
+</div>

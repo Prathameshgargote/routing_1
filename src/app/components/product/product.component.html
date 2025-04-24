@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-3 mt-5">
+            <mat-card class="example-card mat-elevation-z6">
+                <div class="icon text-right">
+                    <button mat-icon-button routerLink="/product"><mat-icon>home</mat-icon></button>
+                </div>
+                <mat-card-header>
+                    <mat-card-title>{{productInfo.pname}}</mat-card-title>
+                    <mat-card-subtitle>{{productInfo.pstatus}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p> Can Return: <strong>{{productInfo.canReturn}}</strong>
+                    </p>
+                </mat-card-content>
+                <mat-card-actions class="d-flex justify-content-between">
+                    <button mat-raised-button color="primary" routerLink="edit">Edit</button>
+                    <button mat-raised-button color="warn" (click)="onremove()">Remove</button>
+                </mat-card-actions>
+            </mat-card>
+
+        </div>
+    </div>
+</div>
